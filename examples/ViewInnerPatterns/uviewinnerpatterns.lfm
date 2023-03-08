@@ -1,0 +1,73 @@
+object FormVisualLearning: TFormVisualLearning
+  Left = 289
+  Height = 804
+  Top = 125
+  Width = 1206
+  Caption = 'CIFAR-10 - Viewing Inner Patterns'
+  ClientHeight = 804
+  ClientWidth = 1206
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object ButLearn: TButton
+    Left = 136
+    Height = 25
+    Top = 72
+    Width = 112
+    Caption = 'Start Learning'
+    OnClick = ButLearnClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ImgSample: TImage
+    Left = 8
+    Height = 32
+    Top = 14
+    Width = 32
+    Stretch = True
+  end
+  object LabClassRate: TLabel
+    Left = 96
+    Height = 46
+    Top = 14
+    Width = 96
+    Caption = '  0%'
+    Color = 15526549
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -40
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object GrBoxNeurons: TGroupBox
+    Left = 24
+    Height = 312
+    Top = 104
+    Width = 344
+    ParentFont = False
+    TabOrder = 1
+  end
+  object GrBoxNeurons2: TGroupBox
+    Left = 392
+    Height = 312
+    Top = 104
+    Width = 344
+    ParentFont = False
+    TabOrder = 2
+  end
+  object GrBoxNeurons3: TGroupBox
+    Left = 760
+    Height = 312
+    Top = 104
+    Width = 344
+    ParentFont = False
+    TabOrder = 3
+  end
+end
