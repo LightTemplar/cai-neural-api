@@ -1,0 +1,48 @@
+object ResultDlg: TResultDlg
+  Left = 264
+  Top = 360
+  BorderStyle = bsDialog
+  Caption = 'Victory'
+  ClientHeight = 110
+  ClientWidth = 316
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  object Bevel1: TBevel
+    Left = 8
+    Top = 8
+    Width = 297
+    Height = 57
+    Shape = bsFrame
+  end
+  object Label1: TLabel
+    Left = 24
+    Top = 24
+    Width = 263
+    Height = 24
+    Alignment = taCenter
+    Caption = 'Congratulations, you have won!'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object OKBtn: TButton
+    Left = 119
+    Top = 76
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 0
+    OnClick = OKBtnClick
+  end
+end

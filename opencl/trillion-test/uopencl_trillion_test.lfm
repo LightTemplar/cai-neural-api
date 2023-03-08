@@ -1,0 +1,133 @@
+object Form1: TForm1
+  Left = 287
+  Height = 361
+  Top = 192
+  Width = 495
+  Caption = 'Evolutionary Algorithm - OpenCL Example'
+  ClientHeight = 361
+  ClientWidth = 495
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 32
+    Height = 25
+    Top = 312
+    Width = 272
+    Caption = 'Run mutations and their evaluations'
+    Enabled = False
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object LabTotal: TLabel
+    Left = 32
+    Height = 20
+    Top = 272
+    Width = 109
+    Caption = 'Total run time is:'
+    ParentColor = False
+  end
+  object LabResult: TLabel
+    Left = 168
+    Height = 20
+    Top = 272
+    Width = 74
+    Caption = 'not run yet.'
+    ParentColor = False
+  end
+  object RBBillion: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 200
+    Width = 295
+    Caption = '1 Billion Mutations (low end video cards)'
+    Checked = True
+    TabOrder = 2
+    TabStop = True
+  end
+  object RBTrillion: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 232
+    Width = 152
+    Caption = '1 Trillion Mutations'
+    TabOrder = 1
+  end
+  object LabKernel: TLabel
+    Left = 32
+    Height = 20
+    Top = 168
+    Width = 45
+    Caption = 'Kernel:'
+    ParentColor = False
+  end
+  object ComboPlatform: TComboBox
+    Left = 128
+    Height = 28
+    Top = 80
+    Width = 200
+    Enabled = False
+    ItemHeight = 20
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object ComboDevType: TComboBox
+    Left = 128
+    Height = 28
+    Top = 120
+    Width = 200
+    Enabled = False
+    ItemHeight = 20
+    ItemIndex = 2
+    Items.Strings = (
+      'Default'
+      'CPU'
+      'GPU'
+      'Accelerator'
+      'All'
+    )
+    Style = csDropDownList
+    TabOrder = 4
+    Text = 'GPU'
+  end
+  object LabelDevType: TLabel
+    Left = 32
+    Height = 20
+    Top = 120
+    Width = 83
+    Caption = 'Device Type:'
+    ParentColor = False
+  end
+  object LabPlatform: TLabel
+    Left = 32
+    Height = 20
+    Top = 80
+    Width = 60
+    Caption = 'Platform:'
+    ParentColor = False
+  end
+  object ButProbe: TButton
+    Left = 352
+    Height = 68
+    Top = 80
+    Width = 123
+    Caption = 'Probe'
+    OnClick = ButProbeClick
+    TabOrder = 5
+  end
+  object LabText1: TLabel
+    Left = 32
+    Height = 20
+    Top = 8
+    Width = 354
+    Caption = 'Evolutionary Algorith with error function: abs(x-5000).'
+    ParentColor = False
+  end
+  object LabText2: TLabel
+    Left = 32
+    Height = 20
+    Top = 40
+    Width = 429
+    Caption = 'The solution is evidently 5000. Probe for devices before you start.'
+    ParentColor = False
+  end
+end

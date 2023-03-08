@@ -1,0 +1,183 @@
+object FormOpt: TFormOpt
+  Left = 513
+  Height = 388
+  Top = 107
+  Width = 279
+  Caption = 'Options...'
+  ClientHeight = 388
+  ClientWidth = 279
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  LCLVersion = '1.0.6.0'
+  object GroupPopOpt: TGroupBox
+    Left = 8
+    Height = 225
+    Top = 8
+    Width = 257
+    Caption = 'Popperian Mining Agent Options: '
+    ClientHeight = 209
+    ClientWidth = 253
+    TabOrder = 0
+    object CHPlan: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 11
+      Width = 131
+      Caption = 'Follow Planning'
+      Checked = True
+      Enabled = False
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Sans'
+      OnChange = CHPlanChange
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 0
+    end
+    object CHABC: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 58
+      Width = 150
+      Caption = '1 step satisfaction'
+      Checked = True
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Sans'
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 1
+      Visible = False
+    end
+    object GroupBox1: TGroupBox
+      Left = 6
+      Height = 57
+      Top = 146
+      Width = 241
+      Caption = 'Random Behaviour (%):'
+      ClientHeight = 41
+      ClientWidth = 237
+      TabOrder = 2
+      object LabRND: TLabel
+        Left = 206
+        Height = 15
+        Top = 10
+        Width = 32
+        Caption = '100%'
+        ParentColor = False
+      end
+      object TBRandom: TTrackBar
+        Left = 6
+        Height = 33
+        Top = 2
+        Width = 193
+        Max = 100
+        OnChange = TBRandomChange
+        Position = 100
+        TabOrder = 0
+      end
+    end
+    object CBNovoPlano: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 26
+      Width = 149
+      Caption = 'Crerate New Plans'
+      Enabled = False
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object CBEliminaIncorreto: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 42
+      Width = 176
+      Caption = 'Remove incorrect plan'
+      Checked = True
+      Enabled = False
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Sans'
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 4
+    end
+    object GBOtim: TGroupBox
+      Left = 6
+      Height = 49
+      Top = 90
+      Width = 241
+      Caption = 'Optimization (%)'
+      ClientHeight = 33
+      ClientWidth = 237
+      TabOrder = 5
+      object LabOptimization: TLabel
+        Left = 206
+        Height = 15
+        Top = 10
+        Width = 18
+        Caption = '1%'
+        ParentColor = False
+      end
+      object TBOptimization: TTrackBar
+        Left = 6
+        Height = 25
+        Top = 2
+        Width = 193
+        Max = 100
+        OnChange = TBOptimizationChange
+        Position = 1
+        TabOrder = 0
+      end
+    end
+  end
+  object GroupAmbiente: TGroupBox
+    Left = 8
+    Height = 113
+    Top = 240
+    Width = 257
+    Caption = 'Virtual World Options : '
+    ClientHeight = 97
+    ClientWidth = 253
+    TabOrder = 1
+    object LabCiclos: TLabel
+      Left = 14
+      Height = 15
+      Top = 66
+      Width = 42
+      Caption = 'Cycles:'
+      ParentColor = False
+    end
+    object ChMostra: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 6
+      Width = 211
+      Caption = 'Show World (CPU Intensive)'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+    end
+    object EdCiclos: TEdit
+      Left = 54
+      Height = 24
+      Top = 63
+      Width = 121
+      TabOrder = 1
+      Text = '2000000'
+    end
+    object CBShowPlan: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 34
+      Width = 226
+      Caption = 'Show Planning (CPU Intensive)'
+      TabOrder = 2
+    end
+  end
+end

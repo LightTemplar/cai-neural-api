@@ -1,0 +1,69 @@
+object FormVisualLearning: TFormVisualLearning
+  Left = 2664
+  Height = 616
+  Top = 194
+  Width = 964
+  Caption = 'Visual CIFAR-10 NN Testing'
+  ClientHeight = 616
+  ClientWidth = 964
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object ButTest: TButton
+    Left = 350
+    Height = 31
+    Top = 100
+    Width = 200
+    Caption = 'Test Neural Network'
+    OnClick = ButTestClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ImgSample: TImage
+    Left = 10
+    Height = 40
+    Top = 10
+    Width = 40
+    Stretch = True
+  end
+  object LabTestFile: TLabel
+    Left = 350
+    Height = 20
+    Top = 10
+    Width = 137
+    Caption = 'CIFAR-10 testing file:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdTestBinFile: TEdit
+    Left = 350
+    Height = 28
+    Top = 50
+    Width = 220
+    ParentFont = False
+    TabOrder = 1
+    Text = 'test_batch.bin'
+  end
+  object LabClassRate: TLabel
+    Left = 180
+    Height = 57
+    Top = 10
+    Width = 72
+    Caption = '0%'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -50
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object OpenDialogNN: TOpenDialog
+    Title = 'Open existing Neural Network file'
+    Filter = 'Neural Network|*.nn'
+    left = 650
+    top = 20
+  end
+end

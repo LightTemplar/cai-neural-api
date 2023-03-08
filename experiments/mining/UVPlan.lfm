@@ -1,0 +1,61 @@
+object FormViewPlans: TFormViewPlans
+  Left = 795
+  Height = 449
+  Top = 107
+  Width = 559
+  Caption = 'Plans'
+  ClientHeight = 449
+  ClientWidth = 559
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  LCLVersion = '1.0.6.0'
+  object Image1: TImage
+    Left = 0
+    Height = 449
+    Top = 0
+    Width = 559
+    Align = alClient
+  end
+  object Shape1: TShape
+    Left = 144
+    Height = 15
+    Top = 56
+    Width = 15
+    Brush.Color = clRed
+    Pen.Color = clMaroon
+    Pen.Style = psClear
+    Shape = stRoundRect
+  end
+  object Shape2: TShape
+    Left = 144
+    Height = 10
+    Top = 80
+    Width = 10
+    Brush.Color = clAqua
+  end
+  object Shape3: TShape
+    Left = 144
+    Height = 10
+    Top = 104
+    Width = 10
+    Brush.Color = clTeal
+  end
+  object Shape4: TShape
+    Left = 144
+    Height = 10
+    Top = 128
+    Width = 10
+    Brush.Color = clNavy
+  end
+  object Shape5: TShape
+    Left = 144
+    Height = 10
+    Top = 152
+    Width = 10
+    Brush.Color = clBlue
+    Shape = stEllipse
+  end
+end

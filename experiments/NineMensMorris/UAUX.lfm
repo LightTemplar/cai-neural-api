@@ -1,0 +1,77 @@
+object A: TA
+  Left = 95
+  Top = 120
+  Width = 320
+  Height = 121
+  Caption = 'Informações sobre posição'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  PixelsPerInch = 96
+  object VH: TLabel
+    Left = 10
+    Top = 8
+    Width = 101
+    Height = 13
+    Caption = 'Visinhos na Hrizontal:'
+  end
+  object NVH: TLabel
+    Left = 119
+    Top = 8
+    Width = 23
+    Height = 13
+    Caption = 'NVH'
+  end
+  object VV: TLabel
+    Left = 10
+    Top = 25
+    Width = 95
+    Height = 13
+    Caption = 'Visinhos na Vertical:'
+  end
+  object NVV: TLabel
+    Left = 119
+    Top = 25
+    Width = 22
+    Height = 13
+    Caption = 'NVV'
+  end
+  object VH2: TLabel
+    Left = 10
+    Top = 43
+    Width = 49
+    Height = 13
+    Caption = 'Inimigos H'
+  end
+  object VV2: TLabel
+    Left = 10
+    Top = 60
+    Width = 48
+    Height = 13
+    Caption = 'Inimigos V'
+  end
+  object NVH2: TLabel
+    Left = 74
+    Top = 43
+    Width = 29
+    Height = 13
+    Caption = 'NVH2'
+  end
+  object NVV2: TLabel
+    Left = 74
+    Top = 60
+    Width = 28
+    Height = 13
+    Caption = 'NVV2'
+  end
+  object Pos: TLabel
+    Left = 200
+    Top = 16
+    Width = 18
+    Height = 13
+    Caption = 'Pos'
+  end
+end

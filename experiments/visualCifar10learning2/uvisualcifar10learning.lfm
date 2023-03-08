@@ -1,0 +1,405 @@
+object FormVisualLearning: TFormVisualLearning
+  Left = 2494
+  Height = 628
+  Top = 30
+  Width = 1078
+  Caption = 'Visual CIFAR-10 Learning - JP02'
+  ClientHeight = 628
+  ClientWidth = 1078
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object ButLearn: TButton
+    Left = 170
+    Height = 31
+    Top = 90
+    Width = 140
+    Caption = 'Start Learning'
+    OnClick = ButLearnClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ImgSample: TImage
+    Left = 10
+    Height = 40
+    Top = 18
+    Width = 40
+    Stretch = True
+  end
+  object LabLearning: TLabel
+    Left = 450
+    Height = 20
+    Top = 18
+    Width = 94
+    Caption = 'Learning Rate:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabInertia: TLabel
+    Left = 450
+    Height = 20
+    Top = 100
+    Width = 45
+    Caption = 'Inertia:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdLearningRate: TEdit
+    Left = 595
+    Height = 28
+    Top = 18
+    Width = 100
+    OnChange = EdLearningRateChange
+    ParentFont = False
+    TabOrder = 1
+    Text = '0.01'
+  end
+  object EdInertia: TEdit
+    Left = 595
+    Height = 28
+    Top = 100
+    Width = 100
+    ParentFont = False
+    TabOrder = 2
+    Text = '0.99'
+  end
+  object LabNFeatures: TLabel
+    Left = 745
+    Height = 20
+    Top = 18
+    Width = 134
+    Caption = 'Number of Features:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabFeatureSize: TLabel
+    Left = 745
+    Height = 20
+    Top = 60
+    Width = 83
+    Caption = 'Feature Size:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdFeatures: TEdit
+    Left = 925
+    Height = 28
+    Top = 18
+    Width = 70
+    ParentFont = False
+    TabOrder = 3
+    Text = '64'
+  end
+  object EdFeatureSize: TEdit
+    Left = 925
+    Height = 28
+    Top = 60
+    Width = 70
+    ParentFont = False
+    TabOrder = 4
+    Text = '5'
+  end
+  object LabHiddenNum: TLabel
+    Left = 745
+    Height = 20
+    Top = 220
+    Width = 138
+    Caption = 'Inner Full Con Layers:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdFCLayers: TEdit
+    Left = 925
+    Height = 28
+    Top = 220
+    Width = 70
+    ParentFont = False
+    TabOrder = 5
+    Text = '2'
+  end
+  object LabConv: TLabel
+    Left = 745
+    Height = 20
+    Top = 180
+    Width = 118
+    Caption = 'Inner Conv Layers:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdConvLayers: TEdit
+    Left = 925
+    Height = 28
+    Top = 180
+    Width = 70
+    ParentFont = False
+    TabOrder = 6
+    Text = '2'
+  end
+  object EdMaxPool: TEdit
+    Left = 925
+    Height = 28
+    Top = 140
+    Width = 70
+    ParentFont = False
+    TabOrder = 7
+    Text = '4'
+  end
+  object LabMaxPool: TLabel
+    Left = 745
+    Height = 20
+    Top = 140
+    Width = 95
+    Caption = 'Max Pool Size:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Labdropout: TLabel
+    Left = 450
+    Height = 20
+    Top = 180
+    Width = 59
+    Caption = 'Dropout:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdDropout: TEdit
+    Left = 595
+    Height = 28
+    Top = 180
+    Width = 100
+    ParentFont = False
+    TabOrder = 8
+    Text = '0'
+  end
+  object LabStride: TLabel
+    Left = 745
+    Height = 20
+    Top = 100
+    Width = 42
+    Caption = 'Stride:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdStride: TEdit
+    Left = 925
+    Height = 28
+    Top = 100
+    Width = 70
+    ParentFont = False
+    TabOrder = 9
+    Text = '1'
+  end
+  object LabClassRate: TLabel
+    Left = 120
+    Height = 56
+    Top = 18
+    Width = 120
+    Caption = '  0%'
+    Color = 15526549
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -50
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabMaxEpochs: TLabel
+    Left = 450
+    Height = 20
+    Top = 220
+    Width = 82
+    Caption = 'Max Epochs:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdMaxEpochs: TEdit
+    Left = 595
+    Height = 28
+    Top = 220
+    Width = 100
+    ParentFont = False
+    TabOrder = 10
+    Text = '200'
+  end
+  object LabMinLearning: TLabel
+    Left = 450
+    Height = 20
+    Top = 60
+    Width = 108
+    Caption = 'Min. Learn. Rate:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdMinLearnRate: TEdit
+    Left = 595
+    Height = 28
+    Top = 60
+    Width = 100
+    ParentFont = False
+    TabOrder = 11
+    Text = '0.00001'
+  end
+  object LabLastLayer: TLabel
+    Left = 745
+    Height = 20
+    Top = 260
+    Width = 65
+    Caption = 'Last layer:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboLastLayer: TComboBox
+    Left = 848
+    Height = 28
+    Top = 260
+    Width = 148
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'Softmax'
+      'Full Connect ReLU'
+    )
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 12
+    Text = 'Softmax'
+  end
+  object LabTestRate: TLabel
+    Left = 250
+    Height = 56
+    Top = 18
+    Width = 120
+    Caption = '  0%'
+    Color = 9940195
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -50
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabTime: TLabel
+    Left = 10
+    Height = 20
+    Top = 140
+    Width = 145
+    Caption = 'Time to be estimated.'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabL2Decay: TLabel
+    Left = 450
+    Height = 20
+    Top = 140
+    Width = 63
+    Caption = 'L2 Decay:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdL2Decay: TEdit
+    Left = 595
+    Height = 28
+    Top = 140
+    Width = 100
+    ParentFont = False
+    TabOrder = 13
+    Text = '0.001'
+  end
+  object ComboAlgo: TComboBox
+    Left = 848
+    Height = 28
+    Top = 300
+    Width = 148
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'User Defined'
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+    )
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 14
+    Text = 'User Defined'
+  end
+  object LabAlgo: TLabel
+    Left = 745
+    Height = 20
+    Top = 300
+    Width = 35
+    Caption = 'Algo:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object CheckAddNoisy: TCheckBox
+    Left = 450
+    Height = 24
+    Top = 260
+    Width = 206
+    Caption = 'Noisy / Data Augmentation'
+    ParentFont = False
+    TabOrder = 15
+  end
+  object CheckCenter: TCheckBox
+    Left = 450
+    Height = 24
+    Top = 340
+    Width = 189
+    Caption = 'Img Center / Div Std Dev'
+    ParentFont = False
+    TabOrder = 16
+  end
+  object LabTotalTime: TLabel
+    Left = 10
+    Height = 20
+    Top = 180
+    Width = 70
+    Caption = 'Total Time'
+    ParentColor = False
+    ParentFont = False
+  end
+  object RadL2All: TRadioButton
+    Left = 450
+    Height = 24
+    Top = 380
+    Width = 125
+    Caption = 'L2 on all layers.'
+    Checked = True
+    ParentFont = False
+    TabOrder = 17
+    TabStop = True
+  end
+  object RadL2Conv: TRadioButton
+    Left = 450
+    Height = 24
+    Top = 420
+    Width = 187
+    Caption = 'L2 on convolution layers.'
+    ParentFont = False
+    TabOrder = 18
+  end
+  object CheckAutoNoisy: TCheckBox
+    Left = 450
+    Height = 24
+    Top = 300
+    Width = 134
+    Caption = 'Automatic Noisy'
+    Checked = True
+    ParentFont = False
+    State = cbChecked
+    TabOrder = 19
+  end
+end

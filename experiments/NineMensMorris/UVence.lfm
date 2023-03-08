@@ -1,0 +1,56 @@
+object FormVence: TFormVence
+  Left = 279
+  Height = 132
+  Top = 122
+  Width = 431
+  Caption = 'Winner'
+  ClientHeight = 132
+  ClientWidth = 431
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  LCLVersion = '1.6.4.0'
+  object LabJog: TLabel
+    Left = 72
+    Height = 24
+    Top = 16
+    Width = 69
+    Caption = 'LabJog'
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabVence: TLabel
+    Left = 152
+    Height = 29
+    Top = 64
+    Width = 104
+    Caption = 'has won.'
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Bevel1: TBevel
+    Left = 16
+    Height = 89
+    Top = 8
+    Width = 393
+    OnChangeBounds = Bevel1ChangeBounds
+  end
+  object BitBtn1: TBitBtn
+    Left = 288
+    Height = 33
+    Top = 56
+    Width = 88
+    Kind = bkOK
+    OnClick = BitBtn1Click
+    TabOrder = 0
+  end
+end

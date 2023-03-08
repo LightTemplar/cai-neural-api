@@ -1,0 +1,109 @@
+object FormNeuralWebServer: TFormNeuralWebServer
+  Left = 456
+  Height = 252
+  Top = 136
+  Width = 362
+  BorderStyle = bsDialog
+  Caption = 'Simple Neural Web Server Example'
+  ClientHeight = 252
+  ClientWidth = 362
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object Label1: TLabel
+    Left = 30
+    Height = 20
+    Top = 20
+    Width = 29
+    Caption = 'Port:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdPort: TEdit
+    Left = 90
+    Height = 28
+    Top = 20
+    Width = 141
+    ParentFont = False
+    TabOrder = 0
+    Text = '80'
+  end
+  object LabBind: TLabel
+    Left = 30
+    Height = 20
+    Top = 70
+    Width = 33
+    Caption = 'Bind:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdBind: TEdit
+    Left = 90
+    Height = 28
+    Top = 70
+    Width = 141
+    ParentFont = False
+    TabOrder = 1
+    Text = '127.0.0.1'
+  end
+  object BitBtnStart: TBitBtn
+    Left = 30
+    Height = 38
+    Top = 200
+    Width = 94
+    Caption = 'Start'
+    OnClick = BitBtnStartClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object BitStop: TBitBtn
+    Left = 138
+    Height = 38
+    Top = 200
+    Width = 94
+    Caption = 'Stop'
+    Enabled = False
+    OnClick = BitStopClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object BitClose: TBitBtn
+    Left = 250
+    Height = 38
+    Top = 200
+    Width = 94
+    Caption = 'Close'
+    OnClick = BitCloseClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object ButLoad: TButton
+    Left = 30
+    Height = 31
+    Top = 160
+    Width = 201
+    Caption = 'Load Neural Network'
+    OnClick = ButLoadClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object CheckLogs: TCheckBox
+    Left = 30
+    Height = 24
+    Top = 120
+    Width = 108
+    Caption = 'Display Logs'
+    Checked = True
+    ParentFont = False
+    State = cbChecked
+    TabOrder = 6
+  end
+  object OpenDialogNN: TOpenDialog
+    DefaultExt = '.nn'
+    Filter = 'Neural Network|*.nn|All Files|*.*'
+    left = 280
+    top = 30
+  end
+end

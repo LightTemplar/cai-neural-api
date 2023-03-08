@@ -1,0 +1,588 @@
+object FormVisualLearning: TFormVisualLearning
+  Left = 644
+  Height = 747
+  Top = 153
+  Width = 1165
+  Caption = 'Visual CIFAR-10 Learning - OpenCL Batch Update'
+  ClientHeight = 747
+  ClientWidth = 1165
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object ButLearn: TButton
+    Left = 856
+    Height = 68
+    Top = 512
+    Width = 128
+    Caption = 'Start Learning'
+    Enabled = False
+    OnClick = ButLearnClick
+    TabOrder = 0
+  end
+  object ImgSample: TImage
+    Left = 8
+    Height = 32
+    Top = 14
+    Width = 32
+    Stretch = True
+  end
+  object LabLearning: TLabel
+    Left = 360
+    Height = 20
+    Top = 14
+    Width = 94
+    Caption = 'Learning Rate:'
+    ParentColor = False
+  end
+  object LabInertia: TLabel
+    Left = 360
+    Height = 20
+    Top = 144
+    Width = 45
+    Caption = 'Inertia:'
+    ParentColor = False
+  end
+  object EdLearningRate: TEdit
+    Left = 476
+    Height = 28
+    Top = 14
+    Width = 80
+    OnChange = EdLearningRateChange
+    TabOrder = 1
+    Text = '0.001'
+  end
+  object EdInertia: TEdit
+    Left = 476
+    Height = 28
+    Top = 144
+    Width = 80
+    TabOrder = 2
+    Text = '0.9'
+  end
+  object LabNFeatures: TLabel
+    Left = 596
+    Height = 20
+    Top = 14
+    Width = 134
+    Caption = 'Number of Features:'
+    ParentColor = False
+  end
+  object LabFeatureSize: TLabel
+    Left = 596
+    Height = 20
+    Top = 48
+    Width = 83
+    Caption = 'Feature Size:'
+    ParentColor = False
+  end
+  object EdFeatures: TEdit
+    Left = 740
+    Height = 28
+    Top = 14
+    Width = 56
+    TabOrder = 3
+    Text = '64'
+  end
+  object EdFeatureSize: TEdit
+    Left = 740
+    Height = 28
+    Top = 48
+    Width = 56
+    TabOrder = 4
+    Text = '5'
+  end
+  object LabHiddenNum: TLabel
+    Left = 596
+    Height = 20
+    Top = 408
+    Width = 101
+    Caption = 'Inner FC Layers:'
+    ParentColor = False
+  end
+  object EdFCLayers: TEdit
+    Left = 740
+    Height = 28
+    Top = 408
+    Width = 56
+    TabOrder = 5
+    Text = '2'
+  end
+  object LabConv: TLabel
+    Left = 596
+    Height = 20
+    Top = 344
+    Width = 118
+    Caption = 'Inner Conv Layers:'
+    ParentColor = False
+  end
+  object EdConvLayers: TEdit
+    Left = 740
+    Height = 28
+    Top = 344
+    Width = 56
+    TabOrder = 6
+    Text = '2'
+  end
+  object EdMaxPool: TEdit
+    Left = 740
+    Height = 28
+    Top = 248
+    Width = 56
+    TabOrder = 7
+    Text = '4'
+  end
+  object LabMaxPool: TLabel
+    Left = 596
+    Height = 20
+    Top = 248
+    Width = 95
+    Caption = 'Max Pool Size:'
+    ParentColor = False
+  end
+  object LabClassRate: TLabel
+    Left = 96
+    Height = 46
+    Top = 14
+    Width = 96
+    Caption = '  0%'
+    Color = 15526549
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -40
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabMaxEpochs: TLabel
+    Left = 360
+    Height = 20
+    Top = 344
+    Width = 82
+    Caption = 'Max Epochs:'
+    ParentColor = False
+  end
+  object EdMaxEpochs: TEdit
+    Left = 476
+    Height = 28
+    Top = 344
+    Width = 80
+    TabOrder = 8
+    Text = '110'
+  end
+  object LabMinLearning: TLabel
+    Left = 360
+    Height = 20
+    Top = 80
+    Width = 108
+    Caption = 'Min. Learn. Rate:'
+    ParentColor = False
+  end
+  object EdMinLearnRate: TEdit
+    Left = 476
+    Height = 28
+    Top = 80
+    Width = 80
+    TabOrder = 9
+    Text = '0.00001'
+  end
+  object LabLastLayer: TLabel
+    Left = 596
+    Height = 20
+    Top = 112
+    Width = 65
+    Caption = 'Last layer:'
+    ParentColor = False
+  end
+  object ComboLastLayer: TComboBox
+    Left = 678
+    Height = 28
+    Top = 112
+    Width = 118
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'Softmax'
+      'Full Connect ReLU'
+    )
+    Style = csDropDownList
+    TabOrder = 10
+    Text = 'Softmax'
+  end
+  object LabTestRate: TLabel
+    Left = 200
+    Height = 46
+    Top = 14
+    Width = 96
+    Caption = '  0%'
+    Color = 9940195
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -40
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabTime: TLabel
+    Left = 8
+    Height = 20
+    Top = 112
+    Width = 145
+    Caption = 'Time to be estimated.'
+    ParentColor = False
+  end
+  object LabL2Decay: TLabel
+    Left = 840
+    Height = 20
+    Top = 216
+    Width = 63
+    Caption = 'L2 Decay:'
+    ParentColor = False
+  end
+  object EdL2Decay: TEdit
+    Left = 956
+    Height = 28
+    Top = 216
+    Width = 80
+    TabOrder = 11
+    Text = '0'
+  end
+  object ComboAlgo: TComboBox
+    Left = 678
+    Height = 28
+    Top = 216
+    Width = 118
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'User Defined'
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+    )
+    OnChange = ComboAlgoChange
+    Style = csDropDownList
+    TabOrder = 12
+    Text = 'User Defined'
+  end
+  object LabAlgo: TLabel
+    Left = 596
+    Height = 20
+    Top = 216
+    Width = 35
+    Caption = 'Algo:'
+    ParentColor = False
+  end
+  object LabTotalTime: TLabel
+    Left = 8
+    Height = 20
+    Top = 144
+    Width = 70
+    Caption = 'Total Time'
+    ParentColor = False
+  end
+  object Label1: TLabel
+    Left = 360
+    Height = 20
+    Top = 248
+    Width = 107
+    Caption = 'Logical Threads:'
+    ParentColor = False
+  end
+  object EdThreadCount: TEdit
+    Left = 476
+    Height = 28
+    Top = 248
+    Width = 80
+    TabOrder = 13
+    Text = '1'
+  end
+  object LabPhysThreads: TLabel
+    Left = 360
+    Height = 20
+    Top = 280
+    Width = 111
+    Caption = 'Physical Threads:'
+    ParentColor = False
+  end
+  object EdPhysThreads: TEdit
+    Left = 476
+    Height = 28
+    Top = 280
+    Width = 80
+    TabOrder = 14
+    Text = '1'
+  end
+  object LabLearnDecay: TLabel
+    Left = 360
+    Height = 20
+    Top = 48
+    Width = 105
+    Caption = 'Learning Decay:'
+    ParentColor = False
+  end
+  object EdLearnRateDecay: TEdit
+    Left = 476
+    Height = 28
+    Top = 48
+    Width = 80
+    TabOrder = 15
+    Text = '0.01'
+  end
+  object LabColor: TLabel
+    Left = 840
+    Height = 20
+    Top = 14
+    Width = 105
+    Caption = 'Color Encoding:'
+    ParentColor = False
+  end
+  object ComboColor: TComboBox
+    Left = 956
+    Height = 28
+    Top = 14
+    Width = 80
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'RGB'
+      'HSV'
+      'HSL'
+      'LAB'
+      'GRAY'
+    )
+    Style = csDropDownList
+    TabOrder = 16
+    Text = 'RGB'
+  end
+  object LabPadding: TLabel
+    Left = 596
+    Height = 20
+    Top = 312
+    Width = 131
+    Caption = 'Inner Conv Padding:'
+    ParentColor = False
+  end
+  object EdConvPadding: TEdit
+    Left = 740
+    Height = 28
+    Top = 312
+    Width = 56
+    TabOrder = 17
+    Text = '1'
+  end
+  object LabCounts: TLabel
+    Left = 8
+    Height = 20
+    Top = 176
+    Width = 66
+    Caption = 'Countings'
+    ParentColor = False
+  end
+  object LabInnerConvFeatureSize: TLabel
+    Left = 596
+    Height = 20
+    Top = 280
+    Width = 136
+    Caption = 'Inner Conv Feat Size:'
+    ParentColor = False
+  end
+  object EdInnerConvFeatureSize: TEdit
+    Left = 740
+    Height = 28
+    Top = 280
+    Width = 56
+    TabOrder = 18
+    Text = '3'
+  end
+  object ChkCrop: TCheckBox
+    Left = 840
+    Height = 24
+    Top = 46
+    Width = 173
+    Caption = '24x24 image cropping'
+    TabOrder = 19
+  end
+  object LabFCNCount: TLabel
+    Left = 596
+    Height = 20
+    Top = 440
+    Width = 115
+    Caption = 'Inner FC Neurons:'
+    ParentColor = False
+  end
+  object EdFCNeuronCount: TEdit
+    Left = 740
+    Height = 28
+    Top = 440
+    Width = 56
+    TabOrder = 20
+    Text = '32'
+  end
+  object LabBatchSize: TLabel
+    Left = 360
+    Height = 20
+    Top = 312
+    Width = 71
+    Caption = 'Batch Size:'
+    ParentColor = False
+  end
+  object EdBatchSize: TEdit
+    Left = 476
+    Height = 28
+    Top = 312
+    Width = 80
+    TabOrder = 21
+    Text = '128'
+  end
+  object LabComputedL2: TLabel
+    Left = 840
+    Height = 20
+    Top = 312
+    Width = 92
+    Caption = 'Computed L2:'
+    ParentColor = False
+  end
+  object LabStaircase: TLabel
+    Left = 360
+    Height = 20
+    Top = 112
+    Width = 113
+    Caption = 'Staircase epochs:'
+    ParentColor = False
+  end
+  object EdStaircaseEpochs: TEdit
+    Left = 476
+    Height = 28
+    Top = 112
+    Width = 80
+    TabOrder = 22
+    Text = '50'
+  end
+  object LabConvNeurons: TLabel
+    Left = 596
+    Height = 20
+    Top = 376
+    Width = 132
+    Caption = 'Inner Conv Neurons:'
+    ParentColor = False
+  end
+  object EdInnerConvNeuronCount: TEdit
+    Left = 740
+    Height = 28
+    Top = 376
+    Width = 56
+    TabOrder = 23
+    Text = '64'
+  end
+  object ComboPlatform: TComboBox
+    Left = 456
+    Height = 28
+    Top = 512
+    Width = 248
+    Enabled = False
+    ItemHeight = 20
+    OnChange = ComboPlatformChange
+    Style = csDropDownList
+    TabOrder = 24
+  end
+  object ComboDevType: TComboBox
+    Left = 456
+    Height = 28
+    Top = 552
+    Width = 248
+    Enabled = False
+    ItemHeight = 20
+    ItemIndex = 2
+    Items.Strings = (
+      'Default'
+      'CPU'
+      'GPU'
+      'Accelerator'
+      'All'
+    )
+    OnChange = ComboDevTypeChange
+    Style = csDropDownList
+    TabOrder = 25
+    Text = 'GPU'
+  end
+  object LabelDevType: TLabel
+    Left = 360
+    Height = 20
+    Top = 552
+    Width = 83
+    Caption = 'Device Type:'
+    ParentColor = False
+  end
+  object LabPlatform: TLabel
+    Left = 360
+    Height = 20
+    Top = 512
+    Width = 60
+    Caption = 'Platform:'
+    ParentColor = False
+  end
+  object ButProbe: TButton
+    Left = 720
+    Height = 68
+    Top = 512
+    Width = 123
+    Caption = 'Probe GPUs'
+    OnClick = ButProbeClick
+    TabOrder = 26
+  end
+  object ChkRunOnCPU: TCheckBox
+    Left = 360
+    Height = 24
+    Top = 592
+    Width = 133
+    Caption = 'Run on CPU only'
+    TabOrder = 27
+  end
+  object LabAutosaveName: TLabel
+    Left = 360
+    Height = 20
+    Top = 216
+    Width = 105
+    Caption = 'Autosave name:'
+    ParentColor = False
+  end
+  object EdAutosaveName: TEdit
+    Left = 476
+    Height = 28
+    Top = 216
+    Width = 80
+    TabOrder = 28
+    Text = 'autosave'
+  end
+  object LabClipDelta: TLabel
+    Left = 360
+    Height = 20
+    Top = 376
+    Width = 69
+    Caption = 'Clip Delta:'
+    ParentColor = False
+  end
+  object EdClipDelta: TEdit
+    Left = 476
+    Height = 28
+    Top = 376
+    Width = 80
+    TabOrder = 29
+    Text = '0'
+  end
+end

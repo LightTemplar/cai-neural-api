@@ -1,0 +1,193 @@
+object FormVisualLearning: TFormVisualLearning
+  Left = 2662
+  Height = 415
+  Top = 110
+  Width = 880
+  Caption = 'Visual CIFAR-10 Learning'
+  ClientHeight = 415
+  ClientWidth = 880
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object ButLearn: TButton
+    Left = 140
+    Height = 31
+    Top = 10
+    Width = 140
+    Caption = 'Start Learning'
+    OnClick = ButLearnClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ImgSample: TImage
+    Left = 10
+    Height = 40
+    Top = 10
+    Width = 40
+    Stretch = True
+  end
+  object LabLearning: TLabel
+    Left = 355
+    Height = 20
+    Top = 18
+    Width = 94
+    Caption = 'Learning Rate:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabInertia: TLabel
+    Left = 355
+    Height = 20
+    Top = 60
+    Width = 45
+    Caption = 'Inertia:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdLearningRate: TEdit
+    Left = 500
+    Height = 28
+    Top = 18
+    Width = 100
+    ParentFont = False
+    TabOrder = 1
+    Text = '0.01'
+  end
+  object EdInertia: TEdit
+    Left = 500
+    Height = 28
+    Top = 60
+    Width = 100
+    ParentFont = False
+    TabOrder = 2
+    Text = '0.99'
+  end
+  object LabNFeatures: TLabel
+    Left = 650
+    Height = 20
+    Top = 18
+    Width = 134
+    Caption = 'Number of Features:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabFeatureSize: TLabel
+    Left = 650
+    Height = 20
+    Top = 60
+    Width = 83
+    Caption = 'Feature Size:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdFeatures: TEdit
+    Left = 830
+    Height = 28
+    Top = 18
+    Width = 40
+    ParentFont = False
+    TabOrder = 3
+    Text = '32'
+  end
+  object EdFeatureSize: TEdit
+    Left = 830
+    Height = 28
+    Top = 60
+    Width = 40
+    ParentFont = False
+    TabOrder = 4
+    Text = '5'
+  end
+  object LabHiddenNum: TLabel
+    Left = 650
+    Height = 20
+    Top = 220
+    Width = 138
+    Caption = 'Inner Full Con Layers:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdFCLayers: TEdit
+    Left = 830
+    Height = 28
+    Top = 220
+    Width = 40
+    ParentFont = False
+    TabOrder = 5
+    Text = '2'
+  end
+  object LabConv: TLabel
+    Left = 650
+    Height = 20
+    Top = 180
+    Width = 118
+    Caption = 'Inner Conv Layers:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdConvLayers: TEdit
+    Left = 830
+    Height = 28
+    Top = 180
+    Width = 40
+    ParentFont = False
+    TabOrder = 6
+    Text = '2'
+  end
+  object EdMaxPool: TEdit
+    Left = 830
+    Height = 28
+    Top = 140
+    Width = 40
+    ParentFont = False
+    TabOrder = 7
+    Text = '4'
+  end
+  object LabMaxPool: TLabel
+    Left = 650
+    Height = 20
+    Top = 140
+    Width = 95
+    Caption = 'Max Pool Size:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Labdropout: TLabel
+    Left = 356
+    Height = 20
+    Top = 100
+    Width = 59
+    Caption = 'Dropout:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdDropout: TEdit
+    Left = 500
+    Height = 28
+    Top = 100
+    Width = 100
+    ParentFont = False
+    TabOrder = 8
+    Text = '0.01'
+  end
+  object LabStride: TLabel
+    Left = 650
+    Height = 20
+    Top = 100
+    Width = 42
+    Caption = 'Stride:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdStride: TEdit
+    Left = 830
+    Height = 28
+    Top = 100
+    Width = 40
+    ParentFont = False
+    TabOrder = 9
+    Text = '1'
+  end
+end

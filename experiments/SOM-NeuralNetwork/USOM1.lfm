@@ -1,0 +1,92 @@
+object Form1: TForm1
+  Left = 372
+  Height = 480
+  Top = 160
+  Width = 696
+  Caption = 'SOM Neural Network -  by João Paulo Schwarz Schuler'
+  ClientHeight = 480
+  ClientWidth = 696
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 480
+    Top = 0
+    Width = 584
+    Align = alClient
+    ClientHeight = 462
+    ClientWidth = 580
+    Color = clBtnFace
+    ParentColor = False
+    TabOrder = 0
+    object Image1: TImage
+      Left = 0
+      Height = 462
+      Top = 0
+      Width = 580
+      Align = alClient
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 584
+    Height = 480
+    Top = 0
+    Width = 112
+    Align = alRight
+    Caption = 'Control'
+    ClientHeight = 462
+    ClientWidth = 108
+    TabOrder = 1
+    object RBQuadrado: TRadioButton
+      Left = 14
+      Height = 19
+      Top = 10
+      Width = 54
+      Caption = 'Square'
+      Checked = True
+      OnClick = RBQuadradoClick
+      TabOrder = 0
+      TabStop = True
+    end
+    object RBCirculo: TRadioButton
+      Left = 14
+      Height = 19
+      Top = 34
+      Width = 46
+      Caption = 'Circle'
+      OnClick = RBQuadradoClick
+      TabOrder = 1
+    end
+    object RBTriangulo: TRadioButton
+      Left = 14
+      Height = 19
+      Top = 58
+      Width = 58
+      Caption = 'Triangle'
+      OnClick = RBQuadradoClick
+      TabOrder = 2
+    end
+    object PBFatorDeCorrecao: TProgressBar
+      Left = 22
+      Height = 305
+      Top = 106
+      Width = 64
+      Orientation = pbVertical
+      Position = 98
+      Smooth = True
+      Step = 1
+      TabOrder = 3
+    end
+  end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = BitBtn1Click
+    left = 624
+    top = 440
+  end
+end

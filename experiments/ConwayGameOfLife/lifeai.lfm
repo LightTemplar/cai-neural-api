@@ -1,0 +1,99 @@
+object Form1: TForm1
+  Left = 592
+  Height = 428
+  Top = 242
+  Width = 624
+  BorderStyle = bsDialog
+  Caption = 'Conway''s Game of Life'
+  ClientHeight = 428
+  ClientWidth = 624
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object VIVLAB: TLabel
+    Left = 504
+    Height = 24
+    Top = 496
+    Width = 45
+    Caption = 'Vivas'
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 428
+    Top = 0
+    Width = 523
+    Align = alClient
+    Caption = 'View'
+    ClientHeight = 410
+    ClientWidth = 519
+    TabOrder = 0
+    object PB: TPaintBox
+      Left = 8
+      Height = 400
+      Top = 1
+      Width = 500
+      OnPaint = PBPaint
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 523
+    Height = 428
+    Top = 0
+    Width = 101
+    Align = alRight
+    Caption = 'Control'
+    ClientHeight = 410
+    ClientWidth = 97
+    TabOrder = 1
+    object StBtn: TButton
+      Left = 14
+      Height = 25
+      Top = 98
+      Width = 75
+      Caption = '&Start!'
+      OnClick = StBtnClick
+      TabOrder = 0
+      Visible = False
+    end
+    object ClBtn: TButton
+      Left = 14
+      Height = 25
+      Top = 26
+      Width = 75
+      Caption = '&Close'
+      OnClick = ClBtnClick
+      TabOrder = 1
+    end
+    object CheckBox1: TCheckBox
+      Left = 14
+      Height = 19
+      Top = 2
+      Width = 50
+      Caption = 'Pause'
+      TabOrder = 2
+    end
+    object About: TButton
+      Left = 14
+      Height = 25
+      Top = 370
+      Width = 75
+      Caption = '&About'
+      OnClick = AboutClick
+      TabOrder = 3
+    end
+  end
+  object Timer1: TTimer
+    Interval = 5
+    OnTimer = Timer1Timer
+    left = 40
+    top = 488
+  end
+end

@@ -1,0 +1,151 @@
+object Form1: TForm1
+  Left = 287
+  Height = 444
+  Top = 192
+  Width = 662
+  Caption = 'Evolutionary Algorithm - Easy OpenCL Example'
+  ClientHeight = 444
+  ClientWidth = 662
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object Button1: TButton
+    Left = 40
+    Height = 31
+    Top = 390
+    Width = 340
+    Caption = 'Run mutations and their evaluations'
+    Enabled = False
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 0
+  end
+  object LabTotal: TLabel
+    Left = 40
+    Height = 20
+    Top = 340
+    Width = 109
+    Caption = 'Total run time is:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabResult: TLabel
+    Left = 210
+    Height = 20
+    Top = 340
+    Width = 74
+    Caption = 'not run yet.'
+    ParentColor = False
+    ParentFont = False
+  end
+  object RBBillion: TRadioButton
+    Left = 40
+    Height = 24
+    Top = 250
+    Width = 295
+    Caption = '1 Billion Mutations (low end video cards)'
+    Checked = True
+    ParentFont = False
+    TabOrder = 2
+    TabStop = True
+  end
+  object RBTrillion: TRadioButton
+    Left = 40
+    Height = 24
+    Top = 290
+    Width = 152
+    Caption = '1 Trillion Mutations'
+    ParentFont = False
+    TabOrder = 1
+  end
+  object LabKernel: TLabel
+    Left = 40
+    Height = 20
+    Top = 210
+    Width = 45
+    Caption = 'Kernel:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboPlatform: TComboBox
+    Left = 160
+    Height = 28
+    Top = 100
+    Width = 310
+    Enabled = False
+    ItemHeight = 20
+    OnChange = ComboPlatformChange
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object ComboDevType: TComboBox
+    Left = 160
+    Height = 28
+    Top = 150
+    Width = 310
+    Enabled = False
+    ItemHeight = 20
+    ItemIndex = 2
+    Items.Strings = (
+      'Default'
+      'CPU'
+      'GPU'
+      'Accelerator'
+      'All'
+    )
+    OnChange = ComboDevTypeChange
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 4
+    Text = 'GPU'
+  end
+  object LabelDevType: TLabel
+    Left = 40
+    Height = 20
+    Top = 150
+    Width = 83
+    Caption = 'Device Type:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabPlatform: TLabel
+    Left = 40
+    Height = 20
+    Top = 100
+    Width = 60
+    Caption = 'Platform:'
+    ParentColor = False
+    ParentFont = False
+  end
+  object ButProbe: TButton
+    Left = 490
+    Height = 85
+    Top = 100
+    Width = 154
+    Caption = 'Probe'
+    OnClick = ButProbeClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object LabText1: TLabel
+    Left = 40
+    Height = 20
+    Top = 10
+    Width = 354
+    Caption = 'Evolutionary Algorith with error function: abs(x-5000).'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabText2: TLabel
+    Left = 40
+    Height = 20
+    Top = 50
+    Width = 429
+    Caption = 'The solution is evidently 5000. Probe for devices before you start.'
+    ParentColor = False
+    ParentFont = False
+  end
+end

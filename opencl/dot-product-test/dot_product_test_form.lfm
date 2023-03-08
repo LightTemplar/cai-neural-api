@@ -1,0 +1,254 @@
+object Form1: TForm1
+  Left = 795
+  Height = 611
+  Top = 181
+  Width = 569
+  Caption = 'OpenCL Dot Product Example'
+  ClientHeight = 611
+  ClientWidth = 569
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object Button1: TButton
+    Left = 32
+    Height = 25
+    Top = 432
+    Width = 272
+    Caption = 'Run Dot Products via OpenCL!'
+    Enabled = False
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object LabTotal: TLabel
+    Left = 32
+    Height = 20
+    Top = 472
+    Width = 165
+    Caption = 'Total OpenCL run time is:'
+    ParentColor = False
+  end
+  object LabResult: TLabel
+    Left = 230
+    Height = 20
+    Top = 472
+    Width = 74
+    Caption = 'not run yet.'
+    ParentColor = False
+  end
+  object RBBillion: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 200
+    Width = 202
+    Caption = '1000 x 32x32 x 64 x 3x3x64'
+    Checked = True
+    OnChange = RBBillionChange
+    TabOrder = 2
+    TabStop = True
+  end
+  object RBTrillion: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 232
+    Width = 265
+    Caption = '10 x 32x32 x 64 x 3x3x64 (100 batch)'
+    TabOrder = 1
+  end
+  object LabKernel: TLabel
+    Left = 32
+    Height = 20
+    Top = 168
+    Width = 185
+    Caption = 'Simulated Convolution Size:'
+    ParentColor = False
+  end
+  object ComboPlatform: TComboBox
+    Left = 128
+    Height = 28
+    Top = 80
+    Width = 248
+    Enabled = False
+    ItemHeight = 20
+    OnChange = ComboPlatformChange
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object ComboDevType: TComboBox
+    Left = 128
+    Height = 28
+    Top = 120
+    Width = 248
+    Enabled = False
+    ItemHeight = 20
+    ItemIndex = 2
+    Items.Strings = (
+      'Default'
+      'CPU'
+      'GPU'
+      'Accelerator'
+      'All'
+    )
+    OnChange = ComboDevTypeChange
+    Style = csDropDownList
+    TabOrder = 4
+    Text = 'GPU'
+  end
+  object LabelDevType: TLabel
+    Left = 32
+    Height = 20
+    Top = 120
+    Width = 83
+    Caption = 'Device Type:'
+    ParentColor = False
+  end
+  object LabPlatform: TLabel
+    Left = 32
+    Height = 20
+    Top = 80
+    Width = 60
+    Caption = 'Platform:'
+    ParentColor = False
+  end
+  object ButProbe: TButton
+    Left = 392
+    Height = 68
+    Top = 80
+    Width = 123
+    Caption = 'Probe'
+    OnClick = ButProbeClick
+    TabOrder = 5
+  end
+  object LabText1: TLabel
+    Left = 32
+    Height = 20
+    Top = 8
+    Width = 306
+    Caption = 'This program runs OpenCL and TVolume code.'
+    ParentColor = False
+  end
+  object LabText2: TLabel
+    Left = 32
+    Height = 20
+    Top = 40
+    Width = 312
+    Caption = 'Running time will be displayed for comparison.'
+    ParentColor = False
+  end
+  object RB3: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 264
+    Width = 250
+    Caption = 'NumAs = NumBs = VectSize x 100'
+    TabOrder = 6
+  end
+  object RB4: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 296
+    Width = 214
+    Caption = '100 x (16x16) x 64 x (3x3x64)'
+    TabOrder = 7
+  end
+  object RB5: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 328
+    Width = 198
+    Caption = '100 x (8x8) x 64 x (3x3x64)'
+    TabOrder = 8
+  end
+  object RB6: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 360
+    Width = 305
+    Caption = '1000x392x1x1024 (full connect simulation)'
+    TabOrder = 9
+  end
+  object LabVolumeTime: TLabel
+    Left = 32
+    Height = 20
+    Top = 504
+    Width = 159
+    Caption = 'CPU/Volume run time is:'
+    ParentColor = False
+  end
+  object LabVolumeResult: TLabel
+    Left = 230
+    Height = 20
+    Top = 504
+    Width = 74
+    Caption = 'not run yet.'
+    ParentColor = False
+  end
+  object LabInterleaved: TLabel
+    Left = 32
+    Height = 20
+    Top = 536
+    Width = 183
+    Caption = 'CPU/Interleaved run time is:'
+    ParentColor = False
+  end
+  object LabInterleavedResult: TLabel
+    Left = 230
+    Height = 20
+    Top = 536
+    Width = 74
+    Caption = 'not run yet.'
+    ParentColor = False
+  end
+  object Ed3: TEdit
+    Left = 392
+    Height = 28
+    Top = 264
+    Width = 100
+    TabOrder = 10
+    Text = '128'
+  end
+  object ComboKernel: TComboBox
+    Left = 344
+    Height = 28
+    Top = 432
+    Width = 197
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'cai_dot_product'
+      'cai_dot_product2'
+      'cai_dot_product_simple'
+      'simpleGEMMT'
+      'myGEMM5'
+      'myGEMM6'
+    )
+    OnChange = ComboKernelChange
+    TabOrder = 11
+    Text = 'cai_dot_product'
+  end
+  object LabTiled: TLabel
+    Left = 32
+    Height = 20
+    Top = 568
+    Width = 140
+    Caption = 'CPU Tiled run time is:'
+    ParentColor = False
+  end
+  object LabTiledResult: TLabel
+    Left = 230
+    Height = 20
+    Top = 568
+    Width = 74
+    Caption = 'not run yet.'
+    ParentColor = False
+  end
+  object RB7: TRadioButton
+    Left = 32
+    Height = 24
+    Top = 392
+    Width = 206
+    Caption = '1000 x 64 x 32x32 x 3x3x64 '
+    TabOrder = 12
+  end
+end
